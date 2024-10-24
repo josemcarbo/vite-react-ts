@@ -7,7 +7,12 @@ import '@fontsource/roboto/700.css';
 
 import './index.css'
 import App from './App.tsx'
+import { ThemeProvider } from '@mui/material';
+import theme from './themes/theme.ts';
 
 createRoot(document.getElementById('root')!).render(
-  <App />
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>
+
 )

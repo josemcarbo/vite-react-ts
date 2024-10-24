@@ -1,5 +1,4 @@
 import { Card, CardActions, CardContent, IconButton, Switch, Typography } from "@mui/material";
-import "./ToDoCard.css";
 import { Delete } from "@mui/icons-material";
 import { Props, useToDoCard } from "./useToDoCard";
 
@@ -9,13 +8,19 @@ function ToDoCard({ todo, onDelete, onCompleted }: Props) {
 
   return (
     <>
-      <Card sx={{ minWidth: 225 }} className="card-container">
+      <Card sx={{
+        width: 300,
+        minHeight: 160,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
         <CardContent>
           <Typography sx={{ color: 'text.secondary', fontSize: 16, fontWeight: 500 }}>
             {todo.id}: {todo.title}
           </Typography>
         </CardContent>
-        <CardActions className="card-actions">
+        <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <IconButton aria-label="delete" onClick={handleDeleteToDo}>
             <Delete color="secondary" />
           </IconButton>
